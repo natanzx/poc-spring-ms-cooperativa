@@ -21,8 +21,8 @@ public interface ApiPauta {
         description = "Cadastra pauta para que inicie uma sessão de votação.",
         responses = {
             @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso."),
-            @ApiResponse(responseCode = "400", description = "CPF inválido ou não informado.</li>"),
-            @ApiResponse(responseCode = "401", description = "Não autorizado</li></ul>"),
+            @ApiResponse(responseCode = "400", description = "Titulo não informado."),
+            @ApiResponse(responseCode = "401", description = "Não autorizado"),
             @ApiResponse(responseCode = "500", description = "Falha inesperada")
         }
     )
@@ -32,8 +32,7 @@ public interface ApiPauta {
         description = "Lista todas as pautas cadastradas.",
         responses = {
             @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso."),
-            @ApiResponse(responseCode = "400", description = "CPF inválido ou não informado.</li>"),
-            @ApiResponse(responseCode = "401", description = "Não autorizado</li></ul>"),
+            @ApiResponse(responseCode = "401", description = "Não autorizado"),
             @ApiResponse(responseCode = "500", description = "Falha inesperada")
         }
     )
@@ -44,7 +43,8 @@ public interface ApiPauta {
             + "<br/> Será validada se a pauta existe.",
         responses = {
             @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso."),
-            @ApiResponse(responseCode = "400", description = "CPF inválido ou não informado.</li>"),
+            @ApiResponse(responseCode = "400", description = "<ul><li>Pauta não existente</li>"
+                + "<li>Já existe uma sessão de votação em aberto</li></ul>"),
             @ApiResponse(responseCode = "401", description = "Não autorizado</li></ul>"),
             @ApiResponse(responseCode = "500", description = "Falha inesperada")
         }
@@ -58,7 +58,13 @@ public interface ApiPauta {
             + "<br/> Deve haver uma sessão aberta.",
         responses = {
             @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso."),
-            @ApiResponse(responseCode = "400", description = "CPF inválido ou não informado.</li>"),
+            @ApiResponse(responseCode = "400", description = "<ul><li>Cpf não informado ou inválido</li>"
+                + "<li>Falha ao validar associado</li>"
+                + "<li>Voto não informado</li>"
+                + "<li>Pauta não existente</li>"
+                + "<li>Associado não permitido votar nessa pauta</li>"
+                + "<li>Associado já votou nessa pauta</li>"
+                + "<li>Nenhuma sessao de votacao em aberto</li></ul>"),
             @ApiResponse(responseCode = "401", description = "Não autorizado</li></ul>"),
             @ApiResponse(responseCode = "500", description = "Falha inesperada")
         }
@@ -71,7 +77,7 @@ public interface ApiPauta {
         description = "Efetua a contagem de votos e retorna o resultado.",
         responses = {
             @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso."),
-            @ApiResponse(responseCode = "400", description = "CPF inválido ou não informado.</li>"),
+            @ApiResponse(responseCode = "400", description = "Pauta não existente ou não informada</li>"),
             @ApiResponse(responseCode = "401", description = "Não autorizado</li></ul>"),
             @ApiResponse(responseCode = "500", description = "Falha inesperada")
         }
