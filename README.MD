@@ -4,6 +4,10 @@
 
 Este projeto foi concebido para avaliação técnica e validação de novas tecnologias.
 
+No cooperativismo, cada associado possui um voto e as decisões são tomadas em assembleias, 
+por votação. Imagine que você deve criar uma solução para dispositivos móveis para gerenciar e 
+participar dessas sessões de votação. 
+
 ## Funcionalidades
 
 ### Regras de negócio
@@ -36,10 +40,11 @@ Este projeto foi concebido para avaliação técnica e validação de novas tecn
 - [x] Versionamento da API com Swagger
 - [x] Testes unitários
 - [x] Testes automatizados (AutomatizadoTest)
-- [ ] Testes de performance (JMeter)
 - [x] Collections Postman
 - [x] Desenho de solução em nuvem aws (IaaS)
 - [x] Desenho de solução em openshift (PaaS)
+- [ ] Testes de performance (JMeter)
+- [ ] Observability (prometheus, grafana)
 
 ## Stack
 
@@ -51,11 +56,11 @@ Este projeto foi concebido para avaliação técnica e validação de novas tecn
 - Lombok
 - Docker-compose
 
-## Documentação
+## Documentação Swagger
 
 A documentação da API está disponível através do Swagger UI, acessível em `/api/swagger-ui/index.html` após iniciar a aplicação.
 
-## Solução
+## Desenho de Solução
 
 ### Solução de arquitetura em AWS
 
