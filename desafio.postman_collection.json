@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "bb231d62-d3a8-400c-811d-89ebef9277e4",
+		"name": "desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22368315"
+	},
+	"item": [
+		{
+			"name": "desafio-mobile",
+			"item": [
+				{
+					"name": "montar tela - inicial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/"
+					},
+					"response": []
+				},
+				{
+					"name": "montar tela - listar pautas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/pautas/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "montar tela - cadastrar pauta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/pautas"
+					},
+					"response": []
+				},
+				{
+					"name": "montar tela - cadastrar sessao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/sessoes"
+					},
+					"response": []
+				},
+				{
+					"name": "montar tela - cadastrar voto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/votos?pautaId=1&associadoId=12345",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"votos"
+							],
+							"query": [
+								{
+									"key": "pautaId",
+									"value": "1"
+								},
+								{
+									"key": "associadoId",
+									"value": "12345"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "desafio-mock",
+			"item": [
+				{
+					"name": "validar usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/api/users/20479572062"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cadastrar pauta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Assembleia dos amigos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/pautas"
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrar sessao em pauta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tamanhoSessaoEmMinutos\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/pautas/:pautaId/sessoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"pautas",
+						":pautaId",
+						"sessoes"
+					],
+					"variable": [
+						{
+							"key": "pautaId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrar voto associado - NAO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"associadoCpf\": \"20479572062\",\r\n    \"voto\": \"NAO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/pautas/:pautaId/votos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"pautas",
+						":pautaId",
+						"votos"
+					],
+					"variable": [
+						{
+							"key": "pautaId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrar voto associado - SIM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"associadoCpf\": \"1234512223\",\r\n    \"voto\": \"SIM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/pautas/:pautaId/votos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"pautas",
+						":pautaId",
+						"votos"
+					],
+					"variable": [
+						{
+							"key": "pautaId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consolidar resultados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/pautas/:pautaId/resultados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"pautas",
+						":pautaId",
+						"resultados"
+					],
+					"variable": [
+						{
+							"key": "pautaId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
