@@ -97,14 +97,14 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"titulo\": \"Assembleia dos amigos\"\r\n}",
+					"raw": "{\r\n    \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "http://localhost:8081/api/pautas"
+				"url": "http://localhost:8081/api/v1/pautas"
 			},
 			"response": []
 		},
@@ -123,7 +123,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/pautas/:pautaId/sessoes",
+					"raw": "http://localhost:8081/api/v1/pautas/:pautaId/sessoes",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -131,6 +131,7 @@
 					"port": "8081",
 					"path": [
 						"api",
+						"v1",
 						"pautas",
 						":pautaId",
 						"sessoes"
@@ -160,7 +161,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/pautas/:pautaId/votos",
+					"raw": "http://localhost:8081/api/v1/pautas/:pautaId/votos",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -168,6 +169,7 @@
 					"port": "8081",
 					"path": [
 						"api",
+						"v1",
 						"pautas",
 						":pautaId",
 						"votos"
@@ -197,7 +199,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/pautas/:pautaId/votos",
+					"raw": "http://localhost:8081/api/v1/pautas/:pautaId/votos",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -205,6 +207,7 @@
 					"port": "8081",
 					"path": [
 						"api",
+						"v1",
 						"pautas",
 						":pautaId",
 						"votos"
@@ -225,7 +228,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/pautas/:pautaId/resultados",
+					"raw": "http://localhost:8081/api/v1/pautas/:pautaId/resultados",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -233,6 +236,7 @@
 					"port": "8081",
 					"path": [
 						"api",
+						"v1",
 						"pautas",
 						":pautaId",
 						"resultados"
